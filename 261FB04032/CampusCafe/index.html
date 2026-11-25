@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17251f">
+  <title>CampusCafe — Student Order Portal</title>
+  <link rel="stylesheet" href="css/main.css">
+  <script src="scripts/menuData.js" defer></script>
+  <script src="scripts/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="CampusCafe home">
+      <span class="brand-mark" aria-hidden="true">☕</span>
+      <span><strong>CampusCafe</strong><small>Fresh snacks &amp; coffee between lectures</small></span>
+    </a>
+    <div class="cart-pill" aria-live="polite">Your cart <span id="cart-count">0</span></div>
+  </header>
+
+  <main class="container">
+    <section class="menu-section">
+      <div class="intro">
+        <p class="eyebrow">THE CAMPUS MENU</p>
+        <h1>A little break.<br><span>A lot of good.</span></h1>
+        <p>Freshly made favourites to keep you going through the day.</p>
+      </div>
+      <div class="controls">
+        <div class="filter-group" role="group" aria-label="Filter menu">
+          <button class="filter-btn active" type="button" data-category="all" aria-pressed="true">All</button>
+          <button class="filter-btn" type="button" data-category="drinks" aria-pressed="false">Drinks</button>
+          <button class="filter-btn" type="button" data-category="snacks" aria-pressed="false">Snacks</button>
+        </div>
+        <label class="search-wrap"><span class="sr-only">Search menu</span>
+          <span aria-hidden="true">⌕</span><input type="search" id="search-input" placeholder="Search menu..." autocomplete="off">
+        </label>
+      </div>
+      <div id="menu-grid" class="menu-grid" aria-live="polite"></div>
+    </section>
+
+    <aside class="cart-panel">
+      <div class="cart-heading"><div><p class="eyebrow">READY WHEN YOU ARE</p><h2>Your order</h2></div><span class="cart-icon" aria-hidden="true">🛍</span></div>
+      <ul id="cart-list" class="cart-list"></ul>
+      <div id="cart-empty" class="cart-empty"><span>🥐</span><p>Your cart is waiting for something delicious.</p></div>
+      <div class="summary-row"><span>Subtotal</span><strong id="cart-subtotal">₹0.00</strong></div>
+      <p id="cart-msg" class="message error" role="alert"></p>
+      <a id="checkout-btn" class="btn btn-primary checkout-link" href="pages/checkout.html">Continue to checkout <span aria-hidden="true">→</span></a>
+      <p class="secure-note">Made for campus moments · Pay at the counter</p>
+    </aside>
+  </main>
+  <footer class="footer">CampusCafe <span>•</span> Good food, good days.</footer>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17251f">
+  <title>Checkout — CampusCafe</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <script src="../scripts/menuData.js" defer></script>
+  <script src="../scripts/checkout.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">☕</span><span><strong>CampusCafe</strong><small>Fresh snacks &amp; coffee between lectures</small></span></a>
+    <a class="back-link" href="../index.html">← Back to menu</a>
+  </header>
+  <main class="checkout-container">
+    <section class="checkout-intro"><p class="eyebrow">ONE LAST STEP</p><h1>Make it <span>yours.</span></h1><p>Confirm your details and get back to enjoying your day.</p></section>
+    <div class="checkout-layout">
+      <section class="checkout-card">
+        <h2>Student details</h2>
+        <form id="order-form" novalidate>
+          <label for="full-name">Full Name</label>
+          <input id="full-name" name="fullName" type="text" placeholder="Enter your full name" autocomplete="name" required>
+          <label for="roll-number">Roll Number</label>
+          <input id="roll-number" name="rollNumber" type="text" placeholder="Enter your roll number" required>
+          <div class="promo-block">
+            <label for="promo-code">Student promo code</label>
+            <div class="promo-entry"><input id="promo-code" type="text" placeholder="Enter promo code" autocomplete="off"><button id="apply-promo" class="btn btn-secondary" type="button">Apply</button></div>
+            <p id="promo-message" class="message" role="status"></p>
+          </div>
+          <p id="form-message" class="message error" role="alert"></p>
+          <button class="btn btn-primary confirm-btn" type="submit">Confirm order <span aria-hidden="true">→</span></button>
+        </form>
+        <div id="confirmation" class="confirmation" role="status" hidden></div>
+      </section>
+      <aside class="checkout-card order-card">
+        <div class="cart-heading"><div><p class="eyebrow">FRESHLY PICKED</p><h2>Order summary</h2></div><span class="cart-icon" aria-hidden="true">🧾</span></div>
+        <ul id="checkout-list" class="checkout-list"></ul>
+        <p id="checkout-empty" class="cart-empty" hidden>Your cart is empty. <a href="../index.html">Return to the menu</a>.</p>
+        <div class="summary-row"><span>Subtotal</span><strong id="checkout-subtotal">₹0.00</strong></div>
+        <div class="summary-row discount-row"><span>Discount</span><strong id="discount-amount">−₹0.00</strong></div>
+        <div class="summary-row grand-total"><span>Grand total</span><strong id="grand-total">₹0.00</strong></div>
+        <p class="secure-note">STUDENT15 gives 15% off orders of ₹150 or more.</p>
+      </aside>
+    </div>
+  </main>
+  <footer class="footer">CampusCafe <span>•</span> Good food, good days.</footer>
+</body>
+</html>
